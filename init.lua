@@ -39,6 +39,9 @@ Plug('ron-rs/ron.vim') --ron syntax highlighting
 Plug('MeanderingProgrammer/render-markdown.nvim') --render md inline
 Plug('emmanueltouzery/decisive.nvim') --view csv files
 Plug('folke/twilight.nvim') --surrounding dim
+Plug('folke/noice.nvim') --better ui
+Plug('MunifTanjim/nui.nvim') --noice dependencies
+Plug('rcarriga/nvim-notify') --better ui
 
 vim.call('plug#end')
 
@@ -47,23 +50,24 @@ require("config.theme")
 require("config.mappings")
 require("config.options")
 require("config.autocmd")
-
 require("plugins.alpha")
--- require("plugins.autopairs")
+require("plugins.autopairs")
 require("plugins.barbar")
 require("plugins.colorizer")
 require("plugins.colorscheme")
 require("plugins.comment")
--- require("plugins.fterm")
--- require("plugins.fzf-lua")
+require("plugins.fterm")
+require("plugins.fzf-lua")
 require("plugins.gitsigns")
 require("plugins.lualine")
 require("plugins.nvim-lint")
--- require("plugins.nvim-tree")
+require("plugins.nvim-tree")
 require("plugins.render-markdown")
--- require("plugins.treesitter")
--- require("plugins.twilight")
--- require("plugins.which-key")
+require("plugins.treesitter")
+require("plugins.twilight")
+require("plugins.which-key")
+require("plugins.noice")
+require("plugins.zeit")
 
 vim.defer_fn(function() 
 		--defer non-essential configs,

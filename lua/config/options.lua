@@ -4,7 +4,7 @@ local options = {
 	showmode = false, --not needed due to lualine
 	showcmd = false,
 	wrap = true, --toggle bound to leader W
-	mouse = "a", --enable mouse
+	mouse = "", --enable mouse
 	clipboard = "unnamedplus", --system clipboard integration
 	history = 100, --command line history
 	swapfile = false, --swap just gets in the way, usually
@@ -16,13 +16,16 @@ local options = {
 	title = true, --automatic window titlebar
 	
 	number = true, --numbering lines
-	relativenumber = true, --toggle bound to leader nn
+	relativenumber = false, -- disable relative line numbers
 	numberwidth = 4,
 
 	smarttab = true, --indentation stuff
 	cindent = true,
 	autoindent = false,
-	tabstop = 4, --visual width of tab
+	tabstop = 8, -- visual width of a tab
+	softtabstop = 8, -- editing width of a tab
+	shiftwidth = 8, -- auto-indent width
+	expandtab = false, -- use tabs, not spaces
 
 	foldmethod = "expr",
 	foldlevel = 99, --disable folding, lower #s enable

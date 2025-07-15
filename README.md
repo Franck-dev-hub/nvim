@@ -1,118 +1,69 @@
-## Bread's guide to **Neovim** configuration
+# Neovim Config (Fork of BreadOnPenguins)
 
-#### Build off of mine, or start your own!
+This repository is a modified version of the Neovim configuration by [BreadOnPenguins](https://github.com/BreadOnPenguins/nvim).
 
-<br>
+## About
 
-> Before starting, ensure you have:
-> - **neovim** (duh)
-> - a [patched font](https://www.nerdfonts.com/) and a terminal that supports glyphs
+This setup is based on the excellent work of BreadOnPenguins. You can find the original project here:
+- **GitHub**: https://github.com/BreadOnPenguins/nvim
+- **YouTube Channel**: [BreadOnPenguins on YouTube](https://www.youtube.com/@BreadOnPenguins)
 
-<br> 
+I used her configuration as a starting point and made various changes and customizations to better fit my workflow and preferences.
 
-### Quickstart with my config:
-```
+## Quick Installation
+
+```sh
 cd ~/.config/ && git clone https://github.com/BreadOnPenguins/nvim
 ```
-- On first boot, run `:PlugInstall` to ensure all plugins are installed and updated with [vim-plug](https://github.com/junegunn/vim-plug)
-- Key maps are in `lua/config/mappings.lua`
-    * **Leader is bound to space**, you can press space by itself for which-key to pop up with bindings info
-- Neovim options are set in `lua/config/options.lua` with some comments for info
-- All plugin configuration is located in the `lua/plugins/` folder
-    * To add or remove plugins, modify the `Plug()` section in `init.lua` appropriately, and ensure to modify `require()` as needed for configuration.
-    * Then run `:PlugInstall` to install or `:PlugClean` to uninstall
 
-<br>
+- Make sure you have **Neovim** installed
+- Use a [Nerd Font](https://www.nerdfonts.com/) compatible terminal
+- Launch Neovim and install plugins using the plugin manager (see below)
 
-### Starting your own config:
+## Plugin Management
 
-Yes, there are a lot of choices! But don't worry, you can easily change your mind later.
+- The original repo uses [vim-plug](https://github.com/junegunn/vim-plug) for plugin management.
+- Edit `init.lua` to add or remove plugins, then run `:PlugInstall` or `:PlugClean` inside Neovim.
 
-**1. Do you want:**
-* Minimal?
-* Power User?
-* Full IDE?
+## Repository Structure
 
-An example directory structure and plugin configuration for each of those is included below.
-
-**2. Choose directory structure**
-- If you prefer vimscript, use an `init.vim`
-- Otherwise, use an `init.lua`
-- If you intend to have a lot of plugins or want a neater structure, split into separate files
-    * You can always expand to more files later
-
-**3. Pick plugin manager**
-- [vim-plug](https://github.com/junegunn/vim-plug) is a minimal option
-- [lazy.nvim](https://github.com/folke/lazy.nvim) is more feature-rich
-- or [several other choices](https://github.com/rockerBOO/awesome-neovim?tab=readme-ov-file#plugin-manager)
-
-**4. Pick plugins** 
-- [Awesome neovim plugins list](https://github.com/rockerBOO/awesome-neovim)
-- See below for a rough guide on types of plugins
-
-**5. Set mappings, options, and plugin config**
-- Use `:help options` or browse [here](https://neovim.io/doc/user/options.html)
-- You don't *always* need to configure plugins: most have sensible defaults, and you can set as few or as many opts as you wish.
-<br><br>
-### the Minimalist (better text editor)
-```
-~/.config/nvim/
-└── init.vim
-```
-
-Plugins might include:
-- File tree
-- Fuzzy finder
-- Comment quick toggle
-- Surround editing
-- Better syntax highlighting
-- Probably a color scheme and status line
-<br><br>
-### the Power User
-```
-~/.config/nvim/
-├── init.lua
-└── lua
-    ├── core
-    │   ├── keymaps.lua
-    │   └── options.lua
-    └── plugins
-        └── plugin.lua
-        └── configs.lua
+```text
+nvim/
+  ├── init.lua
+  ├── LICENSE
+  ├── lua/
+  │   ├── config/
+  │   │   ├── autocmd.lua
+  │   │   ├── mappings.lua
+  │   │   ├── options.lua
+  │   │   ├── saved_theme
+  │   │   └── theme.lua
+  │   └── plugins/
+  │       ├── alpha.lua
+  │       ├── autopairs.lua
+  │       ├── barbar.lua
+  │       ├── colorizer.lua
+  │       ├── colorscheme.lua
+  │       ├── comment.lua
+  │       ├── fterm.lua
+  │       ├── fzf-lua.lua
+  │       ├── gitsigns.lua
+  │       ├── lualine.lua
+  │       ├── noice.lua
+  │       ├── nvim-lint.lua
+  │       ├── nvim-tree.lua
+  │       ├── render-markdown.lua
+  │       ├── treesitter.lua
+  │       ├── twilight.lua
+  │       ├── which-key.lua
+  │       └── zeit.lua
+  └── README.md
 ```
 
-Plugins might include:
-- Everything above, AND
-- LSP & autocompletion
-- Snippets
-- Git integration
-- Faster motions, window management
-- Terminal integration
-- Project and session management
-- Tabline and cursorline
-<br><br>
-### full IDE (do you even need this guide?)
-```
-~/.config/nvim/
-├── init.lua
-├── lazy-lock.json
-└── lua
-    ├── core
-    │   ├── keymaps.lua
-    │   ├── options.lua
-    │   └── plugins.lua
-    ├── plugins
-    │   └── lots.lua
-    │   └── of.lua
-    │   └── plugin.lua
-    │   └── configs.lua
-    └── UltiSnips
-        └── tex.snippets
-```
+## Credits
 
-Plugins might include:
-- Everything above, AND
-- Debugging
-- Code runners
-- Remote development
-- Refactoring
+Big thanks to BreadOnPenguins for sharing her configuration and making it public!
+
+---
+
+*This repository is not affiliated with BreadOnPenguins. For questions about my modifications, please contact me directly.*
