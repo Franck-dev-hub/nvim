@@ -33,6 +33,12 @@ require("gruvbox").setup({
   transparent_mode = true,
 })
 
+require('lualine').setup {
+  options = {
+    theme = 'tokyonight'
+  }
+}
+
 -- if you want to get rid of toggling and just set one scheme, you can set here
 -- local colorscheme = "catppuccin"
 -- vim.cmd('silent! colorscheme catppuccin')

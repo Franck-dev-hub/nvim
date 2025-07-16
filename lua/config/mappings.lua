@@ -10,16 +10,16 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
+map("n", "<Tab>", ":bnext<CR>") -- next buffer
+map("n", "<S-Tab>", ":bprevious<CR>") -- previous buffer
 map("n", "<leader>q", ":BufferClose<CR>")
 map("n", "<leader>Q", ":BufferClose!<CR>")
 map("n", "<leader>U", "::bufdo bd<CR>") --close all
 map('n', '<leader>vs', ':vsplit<CR>:bnext<CR>') --ver split + open next buffer
 
 -- buffer position nav + reorder
-map('n', '<AS-h>', '<Cmd>BufferMovePrevious<CR>')
-map('n', '<AS-l>', '<Cmd>BufferMoveNext<CR>')
+map('n', '<leader><', '<Cmd>BufferMovePrevious<CR>') -- reorder buffer left
+map('n', '<leader>>', '<Cmd>BufferMoveNext<CR>') -- reorder buffer right
 map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>')
 map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>')
 map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>')
@@ -32,15 +32,15 @@ map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
 map('n', '<A-0>', '<Cmd>BufferLast<CR>')
 map('n', '<A-p>', '<Cmd>BufferPin<CR>')
 
--- windows - ctrl nav, fn resize
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
-map("n", "<F5>", ":resize +2<CR>")
-map("n", "<F6>", ":resize -2<CR>")
-map("n", "<F7>", ":vertical resize +2<CR>")
-map("n", "<F8>", ":vertical resize -2<CR>")
+-- windows - ctrl nav, leader resize
+map("n", "<A-j>", "<C-w>h") -- move to left window
+map("n", "<A-k>", "<C-w>j") -- move to below window
+map("n", "<A-i>", "<C-w>k") -- move to above window
+map("n", "<A-l>", "<C-w>l") -- move to right window
+map("n", "<leader>+", ":resize +2<CR>") -- resize window taller
+map("n", "<leader>-", ":resize -2<CR>") -- resize window shorter
+map("n", "<leader><", ":vertical resize -2<CR>") -- resize window narrower
+map("n", "<leader>>", ":vertical resize +2<CR>") -- resize window wider
 
 -- fzf and grep
 map("n", "<leader>f", ":lua require('fzf-lua').files()<CR>") --search cwd
